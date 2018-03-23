@@ -6,29 +6,37 @@ def showIntro():
        print("Welcome to the Arithmetic Engine!")
        print("=================================\n")
        print("Valid commands are 'add', 'mult', 'sub', 'div', and 'quit'")
-         
+       
+  
 def doLoop():
     while True:
-
-        
-        cmd = input("What computation do you want to perform? ").lower()
-        if cmd == 'quit':
-            break
-        num1 = int(input("Enter the first number: "))
-        num2 = int(input("Enter the second number: "))
-        if cmd == "add":
+       cmd = input("What do you want to perform? ").lower()
+       if cmd == 'quit':
+              break             
+       try:              
+              num1 = int(input("Enter the first number: "))
+              num2 = int(input("Enter the second number: "))
+              if cmd == 'div':
+                     num1 // num2
+       except ValueError:
+              print("Use only numbers")
+              continue
+       except:
+              print("Cannot divide by zero")
+              continue
+       if cmd == "add":
             result = num1 + num2
-        elif cmd == "sub":
+       elif cmd == "sub":
             result = num1 - num2
-        elif cmd == "mult":
+       elif cmd == "mult":
             result = num1 * num2
-        elif cmd == "div":
+       elif cmd == "div":
            result = num1 // num2
-           print("The result is " + str(result) + ".\n")
+       print("The result is " + str(result) + ".\n")
 
 def showOutro():
-       print("\nThank you for using the Arithmetic Engine...")
-       print("\nPlease come back again soon!")
+       print("\nThanks for using the Arithmetic Engine...")
+       print("\nCome Back Soon")
 
 def main():
        showIntro()
