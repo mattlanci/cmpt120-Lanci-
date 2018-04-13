@@ -29,13 +29,13 @@ def lining():
     pass
 
 def printBoard(board):
-    print(lining())
-    print(printRow(board[0]))
-    print(lining())
-    print(printRow(board[1]))
-    print(lining())
-    print(printRow(board[2]))
-    print(lining())
+    lining()
+    printRow(board[0])
+    lining()
+    printRow(board[1])
+    lining()
+    printRow(board[2])
+    lining()
     pass
 
 def markBoard(board, row, col, player):
@@ -43,6 +43,7 @@ def markBoard(board, row, col, player):
     pass
 
 def getPlayerMove():
+    # JA: You should check if the location is already played    
     row = int(input("Please enter a row number."))
     col = int(input("Please enter a column number."))
     return (row,col)
@@ -65,6 +66,7 @@ def main():
         row,col = getPlayerMove()
         markBoard(board,row,col,player)
         player = player % 2 + 1 # switch player for next turn
+    printBoard(board)
 
 main()
     
