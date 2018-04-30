@@ -2,11 +2,12 @@
 #CMPT120
 #Project 4
 
+# JA: This does not run
 
- import graphics
- import math
- from graphics import *
- @@ -26,6 +24,30 @@ def buttonMaker(valX1,valY1,valX2,valY2,color,num,win):
+import graphics
+import math
+from graphics import *
+def buttonMaker(valX1,valY1,valX2,valY2,color,num,win):
      buttonNum.draw(win)
      text.draw(win)
  
@@ -34,18 +35,18 @@ def opDoer(win,para,sym,displayString,operation,opsign,hiddenString1):
     text.draw(win)
     return displayString,operation,opsign,hiddenString1    
 
- def screenClean(win):
+def screenClean(win):
      scr1 = Point(60, 60)
      scr2 = Point(380, 120)
- @@ -159,6 +181,7 @@ def main():
+def main():
      science =buttonMaker(380,460,440,520,'red','SM',win)
  
      displayString = ''
-    hiddenString1=''
+     hiddenString1=''
      operation = False
      opsign = 0
      secnum = False
- @@ -167,144 +190,38 @@ def main():
+def main():
      while 1==1:
          clicked = win.getMouse()
          if inside(clicked, num7, 60,140,120,200):
@@ -89,7 +90,7 @@ def opDoer(win,para,sym,displayString,operation,opsign,hiddenString1):
                 secnum=True
             displayString,secnum=insideChecker('4',win,displayString,secnum,operation)
          if inside(clicked, num5, 140,220,200,280):
-             -            screenClean(win)
+            screenClean(win)
             displayString = displayString +'5'
             text = beforeText(displayString)
             text.draw(win)
@@ -185,10 +186,12 @@ def opDoer(win,para,sym,displayString,operation,opsign,hiddenString1):
                 hiddenString1 = displayString
                 displayString = 'x'
                 operation = True
-                opsign = 3 text = beforeText(displayString)
+                opsign = 3
+                text = beforeText(displayString)
             text.draw(win)
             displayString,operation,opsign,hiddenString1=opDoer(win,para,'x',displayString,operation,opsign,hiddenString1)
-         if inside(clicked, div, 300,380,360,440)and operation==False:-            screenClean(win)
+         if inside(clicked, div, 300,380,360,440)and operation==False:
+            screenClean(win)
             if para==True:
                 displayString= displayString+ '/'
             else:
